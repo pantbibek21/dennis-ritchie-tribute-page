@@ -261,6 +261,8 @@
             right: 10px;
         }
 
+        .fa-link {}
+
         .video-section {
 
             border: 1px solid cyan;
@@ -283,11 +285,16 @@
             /* border: 1px solid red; */
         }
 
-        .video-wrapper p {
+        .video-wrapper .video-title,
+        .news-extract .article-heading {
             font-size: 18px;
             font-weight: bold;
 
             margin-bottom: 20px;
+        }
+
+        .news-extract .news2 p {
+            margin-bottom: 12px;
         }
 
         .video-wrapper iframe {
@@ -368,20 +375,23 @@
                 width: 90%;
                 margin-bottom: 0;
             }
+
             .timeline .post {
                 height: auto;
-                
+
                 gap: 20px;
                 flex-direction: column-reverse;
             }
-            
+
             .timeline .content {
-               width: 80%;
-               text-align: left;
+                width: 80%;
+                text-align: left;
             }
+
             .timeline .content h2 {
                 text-align: center;
             }
+
             .timeline .post:nth-of-type(odd) {
                 flex-direction: column-reverse;
             }
@@ -389,6 +399,32 @@
             .post .img-wrapper {
                 width: 60%;
             }
+        }
+
+        .news-extract .foreground {
+            color: rgba(255, 255, 255, 0.672);
+            margin-bottom: 16px;
+        }
+
+        .news-extract figure {
+            font-size: 14px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.683);
+            margin-bottom: 20px;
+        }
+
+        .news-extract .readmore-btn {
+
+            margin-top: 20px;
+            margin-left: -20px;
+            display: inline-block;
+            padding: 12px 18px;
+            color: rgba(29, 206, 222, 0.721);
+            transition: all 0.5s ease;
+        }
+
+        .news-extract .readmore-btn:hover {
+            color: blue;
         }
     </style>
 </head>
@@ -422,14 +458,12 @@
     <main class="main-section">
         <section class="brief-intro">
             <h2 class="section-heading first-heading">Remembering the Legend</h2>
-            <p>Dennis ipsum dolor sit amet consectetur adipisicing elit. Illo, eligendi? Pariatur temporibus harum
-                dolorem vel nulla libero! Ab dolor, culpa labore totam nulla voluptatem asperiores officia in cum et
-                esse, dolorem aspernatur eos provident expedita veritatis illo similique? Itaque modi sunt consequatur
-                pariatur incidunt, quis consequuntur dicta doloribus ratione eveniet blanditiis sequi excepturi aut id
-                animi consectetur ut illo quasi at corrupti sed sit maiores! Quam nihil recusandae facere, vitae quos
-                alias veniam incidunt, eaque quae sed culpa cumque odio neque laborum saepe consequatur? Nemo, nam. Ex
-                nesciunt, beatae earum pariatur, distinctio voluptates tempore libero, numquam sint incidunt
-                exercitationem molestiae.</p>
+            <p>Dennis MacAlistair Ritchie was an American computer scientist. He is most well-known for creating the C
+                programming language and, with long-time colleague Ken Thompson, the Unix operating system and B
+                programming language. Ritchie and Thompson were awarded the Turing Award from the ACM in 1983, the
+                Hamming Medal from the IEEE in 1990 and the National Medal of Technology from President Bill Clinton in
+                1999. Ritchie was the head of Lucent Technologies System Software Research Department when he retired in
+                2007. He was the "R" in K&R C, and commonly known by his username dmr.</p>
         </section>
 
         <section class="timeline">
@@ -614,6 +648,94 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
+                <div class="video-wrapper">
+                    <p class="video-title">Dennis Ritchie japan prize acceptance speech</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/NOxtBAH0uro"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-extract">
+            <h2 class="section-heading">Read these news extracts</h2>
+            <div class="news news1">
+                <p class="article-heading">Dennis Ritchie: the other man inside your iPhone (The Guardian)</p>
+                <p class="foreground">The groundbreaking work he did with Ken Thompson led to the operating system
+                    behind
+                    everything from set-top boxes to the iPhone, but who sings the praises of the late Dennis Ritchie?
+                </p>
+                <div class="image-section">
+                    <div class="image-wrapper">
+                        <img src="/Images/dennis-ritchie-unix-007.webp" alt="">
+                    </div>
+                    <figure>Dennis Ritchie (standing) with Ken Thompson at work in 1972. Photograph: nushackers.org
+                    </figure>
+                </div>
+                <p>It's funny how fickle fame can be. One week Steve Jobs dies and his death tops the news agendas in
+                    dozens
+                    of countries. Just over a week later, Dennis Ritchie dies and nobody – except for a few geeks –
+                    notices.
+                    And yet his work touched the lives of far more people than anything Steve Jobs ever did. In fact if
+                    you're reading this online then the chances are that the router which connects you to the internet
+                    is
+                    running a descendant of the software that Ritchie and his colleague Ken Thompson created in 1969.
+                </p>
+                <a href="https://www.theguardian.com/technology/2011/oct/16/john-naughton-dennis-ritchie-unix"
+                    class="readmore-btn">Read more...</a>
+            </div>
+
+            <div class="news news2">
+                <p class="article-heading">Without Dennis Ritchie, there would be no Jobs (zdnet.com)</p>
+                <p class="foreground">Modern computing as we know it would not have existed without Dennis Ritchie.
+                    Remembering the Father of C and UNIX on what would have been his 80th birthday.</p>
+                <div class="image-section">
+                    <div class="image-wrapper">
+                        <img src="/Images/dennisritchie5.jpg" alt="">
+                    </div>
+                    <figure>Dennis Ritchie <br>
+                        AT&T Bell UNIX Systems Laboratories</figure>
+                </div>
+                <p>Eleven years ago next month, we lost two industry giants. One of them would have been 80 years old
+                    today.</p>
+                <p>It is undeniable that Steve Jobs brought us innovation and iconic products like the world had never
+                    seen, as well as a cult following of consumers and end users that mythologized him.</p>
+                <p>The likes of which will probably never be seen again.</p>
+                <p>At the time of Jobs' passing, I paid my respects and acknowledged his influence, like many in this
+                    industry, despite my documented differences with the man and his company, </p>
+                <p>But the "magical" products that Apple and Steve Jobs -- as well as many other companies created owe
+                    just about everything we know and write about in modern computing as it exists today to Dennis
+                    Ritchie, who passed away on October 12, 2011, at the age of 70.</p>
+                <p>Dennis Ritchie?</p>
+                <p>The younger generation that reads this column is probably scratching their heads. Who was Dennis
+                    Ritchie?</p>
+                <p>Dennis Ritchie wasn't some meticulous billionaire wunderkind from Silicon Valley that mystified
+                    audiences with standing-room-only presentations in his minimalist black mock turtleneck with new
+                    shiny products and wild rhetoric aimed against his competitors.</p>
+                <p>No, Dennis Ritchie was a bearded, somewhat disheveled computer scientist who wore cardigan sweaters
+                    and had a messy office.</p>
+                <p>Unlike Jobs, a college dropout, he was a Ph.D., a Harvard University grad with physics and applied
+                    mathematics degrees.</p>
+                <p>And instead of the gleaming Silicon Valley, he worked at AT&T Bell Laboratories in New Jersey.</p>
+                <p>Yes, Jersey.As in "What exit?"</p>
+                <p>Steve Jobs has frequently been compared to Thomas Edison for the quirkiness of his personality and
+                    inventive nature.</p>
+                <p>I have my issues with that comparison in that we are giving Jobs credit for being an actual
+                    technologist and someone who invented something.</p>
+                <p>It is important to realize that while the man was brilliant in his own way and his contributions were
+                    extremely important to the technology and computer industries, Steve Jobs was not a technologist.
+                </p>
+                <p>Indeed, he had a very strong sense of style and industrial design, understood customers' wants, and
+                    was a master marketer and salesperson. All of these make him a giant in our industry.</p>
+                <p>But inventor? No.</p>
+                <p>Dennis M. Ritchie, on the other hand, invented and co-invented two key software technologies that
+                    effectively make up the DNA of every single computer software product we use directly or indirectly
+                    in the modern age.</p>
+                <p>It sounds like a wild claim, but it really is true.</p>
+
+                <a href="https://www.zdnet.com/article/without-dennis-ritchie-there-would-be-no-jobs/"
+                    class="readmore-btn">Read more...</a>
             </div>
         </div>
     </main>
