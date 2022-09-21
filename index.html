@@ -9,427 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
-
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            width: 100%;
-            color: white;
-            background-color: black;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .header {
-            max-width: 1240px;
-            margin: 0 auto;
-            margin-bottom: 60px;
-            height: 100vh;
-            /* border: 2px solid cyan; */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            position: relative;
-        }
-
-        .header .about-dennis {
-            /* border: 1px solid blue; */
-            width: 50%;
-            text-align: center;
-
-        }
-
-        .header .image-wrapper {
-            width: 40%;
-            height: 94%;
-            /* border: 2px solid blue; */
-            border-radius: 24px;
-            overflow: hidden;
-        }
-
-        .image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-
-        }
-
-        .about-dennis h1 {
-            font-size: 76px;
-            text-shadow: 2px 2px 2px rgb(54, 232, 188);
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-
-        .about-dennis .intro {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: rgba(255, 255, 255, 0.806);
-        }
-
-        .about-dennis .date {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.823);
-
-
-        }
-
-        .candle-wrapper {
-            /* border: 1px solid blue; */
-            margin: 0 auto;
-            width: 300px;
-            height: 300px;
-        }
-
-        .candle-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .mini-candle {
-            width: 100px;
-            z-index: -121;
-            position: absolute;
-            bottom: 0px;
-            display: none;
-
-
-        }
-
-        .candle1 {
-            left: 30px;
-        }
-
-        .candle2 {
-            right: 30px;
-        }
-
-        @media screen and (max-width: 1140px) {
-            .about-dennis h1 {
-                font-size: 58px;
-            }
-        }
-
-
-        @media screen and (max-width: 672px) {
-            .header {
-                max-width: 100vw;
-                flex: none;
-                height: 100vh;
-                align-items: flex-end;
-                background-image: url(/Images/dennis\ ritchie.png);
-                background-position: top;
-                border: 1px solid red;
-                background-repeat: no-repeat;
-            }
-
-            .header .image-wrapper {
-                display: none;
-            }
-
-            .about-dennis {
-                min-width: 100%;
-                margin: 0 auto;
-
-
-            }
-
-            .about-dennis h1 {
-                font-size: 36px;
-
-                margin: 0;
-            }
-
-            .candle-wrapper {
-                display: none;
-            }
-
-            .mini-candle {
-                display: block;
-            }
-
-        }
-
-        .main-section {
-            width: 100%;
-            max-width: 1100px;
-            padding: 0px 20px;
-            /* border: 2px solid cyan; */
-            margin: 0px auto;
-
-            font-size: 18px;
-        }
-
-        .main-section .brief-intro p {
-            color: #ffffffce;
-            text-align: justify;
-        }
-
-        .main-section .timeline {
-            border: 2px solid red;
-            margin-top: 40px;
-        }
-
-        .timeline .post {
-            height: 300px;
-            border: 2px solid cyan;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .timeline .post:nth-of-type(odd) {
-            flex-direction: row-reverse;
-        }
-
-        .post .content {
-            border: 1px solid violet;
-            width: 60%;
-
-        }
-
-        .post .img-wrapper {
-            height: 300px;
-            border: 1px solid orange;
-            width: 40%;
-        }
-
-        .img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .slider-wrapper {
-            /* border: 2px solid red; */
-            width: 90%;
-
-            margin: 60px auto 40px;
-            position: relative;
-
-        }
-
-
-        .slider-wrapper .img-wrapper {
-            display: none;
-            border-radius: 12px;
-        }
-
-        .slider-wrapper .img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-
-        .slider-wrapper .active {
-            display: block;
-        }
-
-        .fa-solid {
-            color: rgb(15, 13, 13);
-            position: absolute;
-            top: 50%;
-            background-color: rgba(245, 245, 245, 0.221);
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .fa-solid:hover {
-            background-color: rgba(255, 255, 255, 0.37);
-        }
-
-        .fa-arrow-left-long {
-            left: 10px;
-        }
-
-        .fa-arrow-right-long {
-            right: 10px;
-        }
-
-        .fa-link {}
-
-        .video-section {
-
-            border: 1px solid cyan;
-            text-align: center;
-            margin-top: 80px;
-            margin-bottom: 60px;
-
-        }
-
-        .video-section .videos {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .video-wrapper {
-            margin: 40px auto;
-            width: 48%;
-            /* border: 1px solid red; */
-        }
-
-        .video-wrapper .video-title,
-        .news-extract .article-heading {
-            font-size: 18px;
-            font-weight: bold;
-
-            margin-bottom: 20px;
-        }
-
-        .news-extract .news2 p {
-            margin-bottom: 12px;
-        }
-
-        .video-wrapper iframe {
-            /* border: 1px solid red; */
-            width: 100%;
-            height: 300px;
-        }
-
-        .program-snippet-wrapper {
-            /* border: 1px solid red; */
-            width: 600px;
-            height: 300px;
-            margin: 40px auto;
-        }
-
-        .program-snippet {
-            text-align: center;
-        }
-
-        .program-snippet-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-
-        .footer {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.511);
-            padding-bottom: 5px;
-            padding-top: 12px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.192);
-        }
-
-        .footer .heart {
-            color: red;
-        }
-
-        .main-section .section-heading {
-            color: white;
-            cursor: default;
-            margin-bottom: 40px;
-            text-align: center;
-            text-shadow: 1px 1px rgb(54, 232, 188);
-        }
-
-        .main-section .first-heading {
-            text-align: left;
-        }
-
-        @media screen and (max-width: 856px) {
-            .about-dennis h1 {
-                font-size: 42px;
-            }
-
-            .about-dennis .intro {
-                display: none;
-            }
-
-            .program-snippet-wrapper {
-                border: 1px solid red;
-                width: 90%;
-            }
-
-            .program-snippet-wrapper img {
-                object-fit: contain;
-                transform: scale(1.1);
-            }
-
-            .videos {
-                flex-direction: column;
-
-            }
-
-            .video-wrapper {
-
-                width: 90%;
-                margin-bottom: 0;
-            }
-
-            .timeline .post {
-                height: auto;
-
-                gap: 20px;
-                flex-direction: column-reverse;
-            }
-
-            .timeline .content {
-                width: 80%;
-                text-align: left;
-            }
-
-            .timeline .content h2 {
-                text-align: center;
-            }
-
-            .timeline .post:nth-of-type(odd) {
-                flex-direction: column-reverse;
-            }
-
-            .post .img-wrapper {
-                width: 60%;
-            }
-        }
-
-        .news-extract .foreground {
-            color: rgba(255, 255, 255, 0.672);
-            margin-bottom: 16px;
-        }
-
-        .news-extract figure {
-            font-size: 14px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.683);
-            margin-bottom: 20px;
-        }
-
-        .news-extract .readmore-btn {
-
-            margin-top: 20px;
-            margin-left: -20px;
-            display: inline-block;
-            padding: 12px 18px;
-            color: rgba(29, 206, 222, 0.721);
-            transition: all 0.5s ease;
-        }
-
-        .news-extract .readmore-btn:hover {
-            color: blue;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
+
+    <!-- Header section starts -->
+
     <header class="header">
         <div class="about-dennis">
             <h1>Dennis Ritchie</h1>
@@ -438,10 +25,8 @@
                 Unix Operating System
             </p>
             <p class="date">
-
                 9 Sept 1941 - 12 Oct 2011
             </p>
-
 
             <div class="candle-wrapper">
                 <img src="/Images/candle-small.jpg" alt="">
@@ -452,127 +37,221 @@
             <!-- <img src="/Images/dennis ritchie-small.jpg" alt=""> -->
             <img src="/Images/dennis ritchie.png" alt="">
         </div>
+
         <img class="mini-candle candle1" src="/Images/mini-candle-mobile.jpg" alt="">
         <img class="mini-candle candle2" src="/Images/mini-candle-mobile.jpg" alt="">
     </header>
+
+    <!-- Main section starts -->
+
     <main class="main-section">
-        <section class="brief-intro">
+
+        <!-- introduction paragraph section starts here -->
+
+        <section class="brief-intro" data-aos="fade-up">
             <h2 class="section-heading first-heading">Remembering the Legend</h2>
             <p>Dennis MacAlistair Ritchie was an American computer scientist. He is most well-known for creating the C
                 programming language and, with long-time colleague Ken Thompson, the Unix operating system and B
                 programming language. Ritchie and Thompson were awarded the Turing Award from the ACM in 1983, the
                 Hamming Medal from the IEEE in 1990 and the National Medal of Technology from President Bill Clinton in
                 1999. Ritchie was the head of Lucent Technologies System Software Research Department when he retired in
-                2007. He was the "R" in K&R C, and commonly known by his username dmr.</p>
+                2007. He was the "R" in K&R C, and commonly known by his username dmr.
+            </p>
         </section>
+
+        <!-- Timeline sections starts here -->
 
         <section class="timeline">
             <h2 class="section-heading">Timeline</h2>
-            <div class="post">
+            <div class="post post1" data-aos="fade-right">
                 <div class="content">
-                    <h2>Deniss Ritchie got awarded</h2>
-                    <h3>October 14, 1998</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam ipsam omnis earum id ratione
-                        libero est nihil magnam, soluta provident optio culpa quae dolore perspiciatis sint sapiente
-                        doloribus molestiae, nulla laudantium ea ex deleniti natus expedita corporis. Adipisci esse
-                        maiores sint ab, quas doloremque consequuntur porro molestias, voluptate temporibus nisi.</p>
+                    <h2>Early Days</h2>
+                    <h3>September 9, 1941 (Born)</h3>
+                    <p>Dennis MacAlistair Ritchie was born to a middle-class family on September 9, 1941, in Bronxville,
+                        New York. His father, Alistair, was a scientist at Bell Labs, the famous American scientific
+                        research and development company known for its track record of innovation.From a young age, it
+                        was clear that Dennis Ritchie had an intrinsic aptitude for science and math.He excelled in his
+                        studies. Upon graduation from Summit High School in 1959, he packed his bags and moved north to
+                        attend Harvard University.</p>
                 </div>
                 <div class="img-wrapper">
-                    <img src="/Images/dennis ritchie-small.jpg" alt="">
+                    <img src="/Images/dennis_young.webp" alt="">
                 </div>
             </div>
-            <div class="post">
+            <div class="post post2" data-aos="fade-left">
                 <div class="content">
-                    <h2>Deniss Ritchie got awarded</h2>
+                    <h2>Higher Studies</h2>
                     <h3>October 14, 1998</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam ipsam omnis earum id ratione
-                        libero est nihil magnam, soluta provident optio culpa quae dolore perspiciatis sint sapiente
-                        doloribus molestiae, nulla laudantium ea ex deleniti natus expedita corporis. Adipisci esse
-                        maiores sint ab, quas doloremque consequuntur porro molestias, voluptate temporibus nisi.</p>
+                    <p>Ritchie attended Harvard University where he achieved an undergraduate degree in physics in 1963,
+                        and a doctoral degree in applied mathematics in 1968. Dennis Ritchie had decided to study
+                        physics. But a chance lecture he attended - on Harvard's computer system, the Univac I - changed
+                        the course of his life.
+                        At the time, computers were not widely understood and programming was not a degree.But Ritchie
+                        was hooked.He took a job at a computer lab at the nearby Massachusetts Institute of Technology,
+                        where he sunk his teeth into the world of computers.His intellectual curiosity knew no
+                        bounds.Ritchie dove headfirst into the new field, absorbing everything it had to offer.
+                        By the time he graduated from Harvard with a degree in physics, Dennis Ritchie had decided that
+                        he would spend his life working with computers.</p>
                 </div>
                 <div class="img-wrapper">
-                    <img src="/Images/dennis ritchie-small.jpg" alt="">
+                    <img src="/Images/dennis-college.png" alt="">
                 </div>
             </div>
-            <div class="post">
+            <div class="post post3" data-aos="fade-right">
                 <div class="content">
-                    <h2>Deniss Ritchie got awarded</h2>
-                    <h3>October 14, 1998</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam ipsam omnis earum id ratione
-                        libero est nihil magnam, soluta provident optio culpa quae dolore perspiciatis sint sapiente
-                        doloribus molestiae, nulla laudantium ea ex deleniti natus expedita corporis. Adipisci esse
-                        maiores sint ab, quas doloremque consequuntur porro molestias, voluptate temporibus nisi.</p>
+                    <h2>Joined Bell Labs</h2>
+                    <h3>January 1, 1967</h3>
+                    <p>In 1967, he joined Bell Labs to begin his life's work. Ritchie was paired with Ken Thompson, a
+                        similarly young, ambitious programmer from UC Berkeley.From the start, it was clear that the two
+                        were kindred spirits.They began work on operating system design - creating the systems that
+                        manage a computer's basic functions.Ritchie and Thompson had observed that minicomputers were
+                        the future, but believed a simpler operating system would be required to manage and streamline
+                        interactions between multiple computers.To meet this future need, they started working on the
+                        UNIX operating system.As the pair began building UNIX, they realized that the assembly language
+                        (low-level programming language) they were using was too rigid for their use case.Dennis Ritchie
+                        proposed creating a new, higher-level language.</p>
+
+                    <p>This idea, and his creation, would change the world.</p>
                 </div>
                 <div class="img-wrapper">
-                    <img src="/Images/dennis ritchie-small.jpg" alt="">
+                    <img src="/Images/dennis and ken.jpg" alt="">
                 </div>
             </div>
-            <div class="post">
+            <div class="post post4" data-aos="fade-left">
                 <div class="content">
-                    <h2>Deniss Ritchie got awarded</h2>
-                    <h3>October 14, 1998</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam ipsam omnis earum id ratione
-                        libero est nihil magnam, soluta provident optio culpa quae dolore perspiciatis sint sapiente
-                        doloribus molestiae, nulla laudantium ea ex deleniti natus expedita corporis. Adipisci esse
-                        maiores sint ab, quas doloremque consequuntur porro molestias, voluptate temporibus nisi.</p>
+                    <h2>Brith of the C Language</h2>
+                    <h3>1969-1973</h3>
+                    <p>Dennis Ritchie's new programming language - which he named "C" (it was based on Thompson's "B"
+                        language) - gave the pair what they needed.They completed the UNIX build.Its unique structure
+                        made possible a new level of portability not previously seen in operating systems.As with most
+                        transformative innovations, it took time for the full impact of the C programming language and
+                        the UNIX operating system to be felt.Interestingly, it was the open-source, non-controlling
+                        approach to the new innovations that sparked their widespread adoption.In 1973, Dennis Ritchie
+                        published a research paper on the C programming language.Several years later, he and a colleague
+                        co-authored a book - The C Programming Language - which would become a Bible of sorts to young
+                        programmers around the world.At the same time as C was spreading like wildfire around the
+                        programming world, Bell Labs began giving away the UNIX source code.</p>
+                    <p>
+                        When the legendary technologists of the 1980s and 1990s began building the future, they were
+                        building with C and UNIX.</p>
                 </div>
                 <div class="img-wrapper">
-                    <img src="/Images/dennis ritchie-small.jpg" alt="">
+                    <img src="/Images/c-programming-language.jpg" alt="">
                 </div>
             </div>
-            <div class="post">
+            <div class="post post5" data-aos="fade-right">
                 <div class="content">
-                    <h2>Deniss Ritchie got awarded</h2>
-                    <h3>October 14, 1998</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam ipsam omnis earum id ratione
-                        libero est nihil magnam, soluta provident optio culpa quae dolore perspiciatis sint sapiente
-                        doloribus molestiae, nulla laudantium ea ex deleniti natus expedita corporis. Adipisci esse
-                        maiores sint ab, quas doloremque consequuntur porro molestias, voluptate temporibus nisi.</p>
+                    <h2>The Turing Award</h2>
+                    <h3>1983</h3>
+                    <p>
+                        In 1983, Ritchie and Thompson received the Turing Award "for their development of generic
+                        operating systems theory and specifically for the implementation of the UNIX operating system".
+                        Ritchie's Turing Award lecture was titled "Reflections on Software Research".
+                        Turing Award is an annual prize given by the Association for Computing Machinery (ACM) to "an
+                        individual selected for contributions of a technical nature made to the computing community".
+                        The Turing Award is recognized as the "highest distinction in computer science" and "Nobel Prize
+                        of Computing".</p>
                 </div>
                 <div class="img-wrapper">
-                    <img src="/Images/dennis ritchie-small.jpg" alt="">
+                    <img src="/Images/dennis-ken-smiling.jpg" alt="">
                 </div>
             </div>
-            <div class="post">
+            <div class="post post6" data-aos="fade-left">
                 <div class="content">
-                    <h2>Deniss Ritchie got awarded</h2>
-                    <h3>October 14, 1998</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam ipsam omnis earum id ratione
-                        libero est nihil magnam, soluta provident optio culpa quae dolore perspiciatis sint sapiente
-                        doloribus molestiae, nulla laudantium ea ex deleniti natus expedita corporis. Adipisci esse
-                        maiores sint ab, quas doloremque consequuntur porro molestias, voluptate temporibus nisi.</p>
+                    <h2>IEEE Richard W. Hamming Medal</h2>
+                    <h3>1990</h3>
+                    <p>In 1990, both Ritchie and Thompson received the IEEE Richard W. Hamming Medal from the Institute
+                        of Electrical and Electronics Engineers (IEEE), "for the origination of the UNIX operating
+                        system and the C programming language".The IEEE Richard W. Hamming Medal is presented annually
+                        to up to three persons, for outstanding achievements in information sciences, information
+                        systems and information technology. The recipients receive a gold medal, together with a replica
+                        in bronze, a certificate and an honorarium.</p>
                 </div>
                 <div class="img-wrapper">
-                    <img src="/Images/dennis ritchie-small.jpg" alt="">
+                    <img src="/Images/dennis and ken at unix.jpg" alt="">
                 </div>
             </div>
-            <div class="post">
+            <div class="post post7" data-aos="fade-right">
                 <div class="content">
-                    <h2>Deniss Ritchie got awarded</h2>
-                    <h3>October 14, 1998</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam ipsam omnis earum id ratione
-                        libero est nihil magnam, soluta provident optio culpa quae dolore perspiciatis sint sapiente
-                        doloribus molestiae, nulla laudantium ea ex deleniti natus expedita corporis. Adipisci esse
-                        maiores sint ab, quas doloremque consequuntur porro molestias, voluptate temporibus nisi.</p>
+                    <h2>Fellow at The Computer History Museum</h2>
+                    <h3>1997</h3>
+                    <p>In 1997, both Ritchie and Thompson were made Fellows of the Computer History Museum, "for
+                        co-creation of the UNIX operating system, and for development of the C programming language."The
+                        Computer History Museum is a museum of computer history, located in Mountain View, California.
+                        The museum presents stories and artifacts of Silicon Valley and the information age, and
+                        explores the computing revolution and its impact on society.</p>
                 </div>
                 <div class="img-wrapper">
-                    <img src="/Images/dennis ritchie-small.jpg" alt="">
+                    <img src="/Images/Computer_history_museum.jpg" alt="">
                 </div>
             </div>
-            <div class="post">
+            <div class="post post8" data-aos="fade-left">
                 <div class="content">
-                    <h2>Deniss Ritchie got awarded</h2>
-                    <h3>October 14, 1998</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam ipsam omnis earum id ratione
-                        libero est nihil magnam, soluta provident optio culpa quae dolore perspiciatis sint sapiente
-                        doloribus molestiae, nulla laudantium ea ex deleniti natus expedita corporis. Adipisci esse
-                        maiores sint ab, quas doloremque consequuntur porro molestias, voluptate temporibus nisi.</p>
+                    <h2>The National Medal of Technology</h2>
+                    <h3>April 21, 1999</h3>
+                    <p>On April 21, 1999, Thompson and Ritchie jointly received the National Medal of Technology of 1998
+                        from President Bill Clinton for co-inventing the UNIX operating system and the C programming
+                        language which, according to the citation for the medal, "led to enormous advances in computer
+                        hardware, software, and networking systems and stimulated growth of an entire industry, thereby
+                        enhancing American leadership in the Information Age".The National Medal of Technology and
+                        Innovation (formerly the National Medal of Technology) is an honor granted by the President of
+                        the United States to American inventors and innovators who have made significant contributions
+                        to the development of new and important technology. </p>
                 </div>
                 <div class="img-wrapper">
-                    <img src="/Images/dennis ritchie-small.jpg" alt="">
+                    <img src="/Images/dennis-ritchie-with-bill-clinton.webp" alt="">
+                </div>
+            </div>
+
+            <div class="post post9" data-aos="fade-right">
+                <div class="content">
+                    <h2>The IRI Achievement Award</h2>
+                    <h3>2005</h3>
+                    <p>In 2005, the Industrial Research Institute awarded Ritchie its Achievement Award in recognition
+                        of his contribution to science and technology, and to society generally, with his development of
+                        the Unix operating system.The IRI Achievement Award, established by the Industrial Research
+                        Institute (IRI) in 1973, is awarded "to honor outstanding accomplishment in individual
+                        creativity and innovation that contributes broadly to the development of industry and to the
+                        benefit of society."</p>
+                </div>
+                <div class="img-wrapper">
+                    <img src="/Images/dennis-brown-image.jpg" alt="">
+                </div>
+            </div>
+            <div class="post post10" data-aos="fade-left">
+                <div class="content">
+                    <h2>The Japan Prize</h2>
+                    <h3>2011</h3>
+                    <p>
+                        In 2011, Ritchie, along with Thompson, was awarded the Japan Prize for Information and
+                        Communications for his work in the development of the Unix operating system.The Japan Prize is
+                        awarded to people from all parts of the world whose "original and outstanding achievements in
+                        science and technology are recognized as having advanced the frontiers of knowledge and served
+                        the cause of peace and prosperity for mankind."</p>
+                </div>
+                <div class="img-wrapper">
+                    <img src="/Images/the japan prize.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="post post11" data-aos="fade-right">
+                <div class="content">
+                    <h2>Bid Farewell</h2>
+                    <h3>October 12, 2011</h3>
+                    <p>Ritchie was found dead on October 12, 2011, at the age of 70 at his home in Berkeley Heights, New
+                        Jersey, where he lived alone.First news of his death came from his former colleague, Rob Pike.He
+                        had been in frail health for several years following treatment for prostate cancer and heart
+                        disease.News of Ritchie's death was largely overshadowed by the media coverage of the death of
+                        Apple co-founder Steve Jobs, which occurred the week before.
+                    </p>
+                </div>
+                <div class="img-wrapper">
+                    <img src="/Images/dennis_young.webp" alt="">
                 </div>
             </div>
         </section>
+
+        <!-- Sliders section starts here -->
 
         <div class="slider-wrapper">
             <h2 class="section-heading">Some quotes by Deniis Ritchie</h2>
@@ -607,12 +286,16 @@
             <i class="fa-solid fa-arrow-right-long"></i>
         </div>
 
+        <!-- Program snippet starts here -->
+
         <div class="program-snippet">
             <h2 class="section-heading">Hello World program in C</h2>
             <div class="program-snippet-wrapper">
                 <img src="/Images/helloworld.c.png" alt="">
             </div>
         </div>
+
+        <!-- Video section starts here -->
 
         <div class="video-section">
             <h2 class="section-heading">Watch some clips !</h2>
@@ -658,6 +341,8 @@
             </div>
         </div>
 
+        <!-- News section starts here -->
+
         <div class="news-extract">
             <h2 class="section-heading">Read these news extracts</h2>
             <div class="news news1">
@@ -698,47 +383,53 @@
                         AT&T Bell UNIX Systems Laboratories</figure>
                 </div>
                 <p>Eleven years ago next month, we lost two industry giants. One of them would have been 80 years old
-                    today.</p>
-                <p>It is undeniable that Steve Jobs brought us innovation and iconic products like the world had never
-                    seen, as well as a cult following of consumers and end users that mythologized him.</p>
-                <p>The likes of which will probably never be seen again.</p>
-                <p>At the time of Jobs' passing, I paid my respects and acknowledged his influence, like many in this
-                    industry, despite my documented differences with the man and his company, </p>
-                <p>But the "magical" products that Apple and Steve Jobs -- as well as many other companies created owe
-                    just about everything we know and write about in modern computing as it exists today to Dennis
-                    Ritchie, who passed away on October 12, 2011, at the age of 70.</p>
-                <p>Dennis Ritchie?</p>
-                <p>The younger generation that reads this column is probably scratching their heads. Who was Dennis
+                    today.
+                    It is undeniable that Steve Jobs brought us innovation and iconic products like the world had never
+                    seen, as well as a cult following of consumers and end users that mythologized him. The younger
+                    generation that reads this column is probably scratching their heads. Who was Dennis
                     Ritchie?</p>
                 <p>Dennis Ritchie wasn't some meticulous billionaire wunderkind from Silicon Valley that mystified
                     audiences with standing-room-only presentations in his minimalist black mock turtleneck with new
-                    shiny products and wild rhetoric aimed against his competitors.</p>
-                <p>No, Dennis Ritchie was a bearded, somewhat disheveled computer scientist who wore cardigan sweaters
+                    shiny products and wild rhetoric aimed against his competitors.
+                    No, Dennis Ritchie was a bearded, somewhat disheveled computer scientist who wore cardigan sweaters
                     and had a messy office.</p>
                 <p>Unlike Jobs, a college dropout, he was a Ph.D., a Harvard University grad with physics and applied
-                    mathematics degrees.</p>
-                <p>And instead of the gleaming Silicon Valley, he worked at AT&T Bell Laboratories in New Jersey.</p>
-                <p>Yes, Jersey.As in "What exit?"</p>
-                <p>Steve Jobs has frequently been compared to Thomas Edison for the quirkiness of his personality and
-                    inventive nature.</p>
-                <p>I have my issues with that comparison in that we are giving Jobs credit for being an actual
-                    technologist and someone who invented something.</p>
-                <p>It is important to realize that while the man was brilliant in his own way and his contributions were
-                    extremely important to the technology and computer industries, Steve Jobs was not a technologist.
-                </p>
-                <p>Indeed, he had a very strong sense of style and industrial design, understood customers' wants, and
-                    was a master marketer and salesperson. All of these make him a giant in our industry.</p>
-                <p>But inventor? No.</p>
-                <p>Dennis M. Ritchie, on the other hand, invented and co-invented two key software technologies that
-                    effectively make up the DNA of every single computer software product we use directly or indirectly
-                    in the modern age.</p>
-                <p>It sounds like a wild claim, but it really is true.</p>
+                    mathematics degrees.
+                    And instead of the gleaming Silicon Valley, he worked at AT&T Bell Laboratories in New Jersey.</p>
+
 
                 <a href="https://www.zdnet.com/article/without-dennis-ritchie-there-would-be-no-jobs/"
                     class="readmore-btn">Read more...</a>
             </div>
         </div>
+
+        <!-- Reference section starts here -->
+
+        <div class="reference-section">
+            <h2 class="section-heading">References</h2>
+            <p>
+            <ul>
+                <li><a
+                        href="https://en.wikipedia.org/wiki/Dennis_Ritchie">https://en.wikipedia.org/wiki/Dennis_Ritchie</a>
+                </li>
+                <li><a
+                        href="https://www.timetoast.com/timelines/dennis-ritchie-4a1a22ba-f141-403a-856d-d0e2b2dec9c7">https://www.timetoast.com/timelines/dennis-ritchie-4a1a22ba-f141-403a-856d-d0e2b2dec9c7</a>
+                </li>
+                <li><a
+                        href="https://twitter.com/SahilBloom/status/1368595434399145987">https://twitter.com/SahilBloom/status/1368595434399145987</a>
+                </li>
+                <li><a
+                        href="https://www.theguardian.com/technology/2011/oct/16/john-naughton-dennis-ritchie-unix">https://www.theguardian.com/technology/2011/oct/16/john-naughton-dennis-ritchie-unix</a>
+                </li>
+                <li><a
+                        href="https://www.zdnet.com/article/without-dennis-ritchie-there-would-be-no-jobs/">https://www.zdnet.com/article/without-dennis-ritchie-there-would-be-no-jobs/</a>
+                </li>
+            </ul>
+            </p>
+        </div>
     </main>
+
+    <!-- footer section starts here -->
 
     <footer class="footer">
         Ahh, no copyrights. Feel free to use, share and modify this design. <br>
@@ -749,7 +440,13 @@
 
 
 
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 320, // offset (in px) from the original trigger point
+            duration: 400, // values from 0 to 3000, with step 50ms
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 
