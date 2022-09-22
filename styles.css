@@ -112,9 +112,11 @@ body {
     width: 100%;
     max-width: 1100px;
     padding: 0px 20px;
-    /* border: 2px solid cyan; */
+    border: 2px solid cyan;
     margin: 0px auto;
     font-size: 18px;
+    position: relative;
+    overflow: hidden;
 }
 
 .main-section .brief-intro p {
@@ -126,7 +128,8 @@ body {
 /* Timeline section */
 
 .main-section .timeline {
-    /* border: 2px solid red; */
+    border: 2px solid red;
+    padding: 0;
     margin-top: 40px;
 }
 
@@ -183,7 +186,7 @@ body {
 
 .post .img-wrapper {
     height: 300px;
-    /* border: 1px solid orange; */
+    border: 1px solid orange;
     width: 40%;
     overflow: hidden;
 }
@@ -336,10 +339,11 @@ body {
 
 .news-extract .image-wrapper {
     max-width: 800px;
-   min-height: 500px;
+    min-height: 500px;
     margin: 0 auto;
-padding-bottom: 12px;
+    padding-bottom: 12px;
 }
+
 .news-extract .image-wrapper img {
     width: 100%;
     height: 100%;
@@ -383,15 +387,16 @@ padding-bottom: 12px;
     list-style: none;
     margin-bottom: 12px;
     width: 100%;
-    overflow-wrap:break-word;
+    overflow-wrap: break-word;
 }
 
 .reference-section ul li a {
-    color: blue;
+    transition: all 0.5s ease;
+    color: rgba(29, 206, 222, 0.721);
 }
 
 .reference-section ul li a:hover {
-    color: rgb(128, 122, 217);
+    color: blue;
 }
 
 /* Styles for the responsiveness starts here */
@@ -441,6 +446,7 @@ padding-bottom: 12px;
     .timeline .content {
         width: 80%;
         text-align: left;
+        border: 1px solid red;
     }
 
     .timeline .content h2 {
@@ -462,7 +468,7 @@ padding-bottom: 12px;
         flex: none;
         height: 100vh;
         align-items: flex-end;
-        background-image: url(/Images/dennis\ ritchie.png);
+        background-image: url("./Images/dennis\ ritchie.png");
         background-position: top;
         /* border: 1px solid red; */
         background-repeat: no-repeat;
@@ -474,7 +480,7 @@ padding-bottom: 12px;
 
     .about-dennis {
         min-width: 100%;
-        margin: 0 auto;
+        border: 1px solid red;
     }
 
     .about-dennis h1 {
@@ -492,5 +498,34 @@ padding-bottom: 12px;
 
     .news-extract .image-wrapper {
         min-height: auto;
+    }
+
+    .timeline .post2 .content {
+        padding-right: 0;
+    }
+
+    .timeline .content {
+        width: 100%;
+
+        letter-spacing: 1px;
+    }
+
+    .timeline .post3 .content,
+    .timeline .post5 .content {
+        padding-left: 0;
+    }
+
+    .post .img-wrapper {
+        height: 300px;
+        border: 1px solid orange;
+        width: 100%;
+    }
+
+    .main-section .section-heading {
+        font-size: 24px;
+    }
+
+    .footer {
+        padding: 8px 20px;
     }
 }
