@@ -112,7 +112,7 @@ body {
     width: 100%;
     max-width: 1100px;
     padding: 0px 20px;
-    border: 2px solid cyan;
+    /* border: 2px solid cyan; */
     margin: 0px auto;
     font-size: 18px;
     position: relative;
@@ -128,7 +128,7 @@ body {
 /* Timeline section */
 
 .main-section .timeline {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     padding: 0;
     margin-top: 40px;
 }
@@ -186,7 +186,7 @@ body {
 
 .post .img-wrapper {
     height: 300px;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     width: 40%;
     overflow: hidden;
 }
@@ -205,28 +205,32 @@ body {
 
 /* Slider section starts */
 
-.slider-wrapper {
+.slider-section {
     /* border: 2px solid red; */
-    width: 90%;
+    width: 100%;
     margin: 60px auto 40px;
-    position: relative;
+
 
 }
 
+.slider-section .slider-wrapper {
+    /* border: 2px solid cyan; */
+    position: relative;
+}
 
-.slider-wrapper .img-wrapper {
+.slider-section .img-wrapper {
     display: none;
     border-radius: 12px;
 }
 
-.slider-wrapper .img-wrapper img {
+.slider-section .img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 12px;
 }
 
-.slider-wrapper .active {
+.slider-section .active {
     display: block;
 }
 
@@ -391,6 +395,7 @@ body {
 }
 
 .reference-section ul li a {
+    font-size: 16px;
     transition: all 0.5s ease;
     color: rgba(29, 206, 222, 0.721);
 }
@@ -446,7 +451,7 @@ body {
     .timeline .content {
         width: 80%;
         text-align: left;
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
 
     .timeline .content h2 {
@@ -466,11 +471,11 @@ body {
     .header {
         max-width: 100vw;
         flex: none;
-        height: 100vh;
+        height: 800px;
         align-items: flex-end;
         background-image: url("./Images/dennis\ ritchie.png");
-        background-position: top;
-        /* border: 1px solid red; */
+        background-position: center;
+
         background-repeat: no-repeat;
     }
 
@@ -480,7 +485,7 @@ body {
 
     .about-dennis {
         min-width: 100%;
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
 
     .about-dennis h1 {
@@ -493,7 +498,17 @@ body {
     }
 
     .mini-candle {
+        width: 70px;
+        height: 70px;
         display: block;
+    }
+
+    .candle1 {
+        left: -6px;
+    }
+
+    .candle2 {
+        right: -6px;
     }
 
     .news-extract .image-wrapper {
@@ -502,6 +517,10 @@ body {
 
     .timeline .post2 .content {
         padding-right: 0;
+    }
+
+    .timeline .content h2 {
+        font-size: 20px;
     }
 
     .timeline .content {
@@ -517,12 +536,12 @@ body {
 
     .post .img-wrapper {
         height: 300px;
-        border: 1px solid orange;
+        /* border: 1px solid orange; */
         width: 100%;
     }
 
     .main-section .section-heading {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .footer {
